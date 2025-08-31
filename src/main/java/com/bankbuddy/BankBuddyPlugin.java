@@ -1,4 +1,4 @@
-package com.example;
+package com.bankbuddy;
 
 import com.google.inject.Provides;
 import javax.inject.Inject;
@@ -14,26 +14,28 @@ import net.runelite.client.plugins.PluginDescriptor;
 
 @Slf4j
 @PluginDescriptor(
-	name = "Example"
+	name = "Bank Buddy",
+	description = "A comprehensive banking assistant plugin that helps organize and manage your bank efficiently",
+	tags = {"bank", "banking", "organization", "inventory", "management", "utility"}
 )
-public class ExamplePlugin extends Plugin
+public class BankBuddyPlugin extends Plugin
 {
 	@Inject
 	private Client client;
 
 	@Inject
-	private ExampleConfig config;
+	private BankBuddyConfig config;
 
 	@Override
 	protected void startUp() throws Exception
 	{
-		log.info("Example started!");
+		log.info("Bank Buddy started!");
 	}
 
 	@Override
 	protected void shutDown() throws Exception
 	{
-		log.info("Example stopped!");
+		log.info("Bank Buddy stopped!");
 	}
 
 	@Subscribe
@@ -41,13 +43,17 @@ public class ExamplePlugin extends Plugin
 	{
 		if (gameStateChanged.getGameState() == GameState.LOGGED_IN)
 		{
-			client.addChatMessage(ChatMessageType.GAMEMESSAGE, "", "Example says " + config.greeting(), null);
+			if (config.enableWelcomeMessage())
+			{
+				client.addChatMessage(ChatMessageType.GAMEMESSAGE, "", 
+					"Bank Buddy is ready to help organize your bank!", null);
+			}
 		}
 	}
 
 	@Provides
-	ExampleConfig provideConfig(ConfigManager configManager)
+	BankBuddyConfig provideConfig(ConfigManager configManager)
 	{
-		return configManager.getConfig(ExampleConfig.class);
+		return configManager.getConfig(BankBuddyConfig.class);
 	}
 }
