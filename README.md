@@ -4,11 +4,27 @@ A comprehensive banking assistant plugin for RuneLite that helps organize and ma
 
 ## Features
 
-- **Bank Organization**: Automatic bank organization and management tools
-- **Item Value Display**: View item values directly in your bank interface  
-- **Search Enhancements**: Improved bank search functionality
-- **Welcome Messages**: Configurable welcome messages when logging in
-- **Customizable Settings**: Full configuration options for all features
+- **🏦 Bank Value Calculation**: Real-time calculation and display of total bank value
+- **📊 Bank Statistics**: Detailed statistics including total items, unique items, and bank space usage
+- **💰 Valuable Item Detection**: Automatically identify and list your most valuable items
+- **📂 Category Organization**: Organize items by categories (Combat, Skilling, Potions, etc.)
+- **⚠️ Smart Notifications**: Configurable alerts for bank space warnings and value changes
+- **🎨 Customizable Overlay**: Adjustable overlay with compact mode and color options
+- **🔍 Enhanced Bank Menus**: Right-click bank for additional organization options
+- **⚙️ Comprehensive Settings**: Fully configurable thresholds, colors, and display options
+
+### Bank Buddy Overlay Features:
+- Total bank value with formatted display
+- Item count statistics (total and unique)
+- Bank space utilization with color-coded warnings
+- Compact mode for minimal screen usage
+- Customizable colors and positioning
+
+### Right-Click Bank Menu Options:
+- **Bank Stats**: Quick overview of bank statistics
+- **Calculate Value**: Force recalculation of bank value
+- **Valuable Items**: List items above configured threshold
+- **Category Values**: Show value breakdown by item categories
 
 ## Installation
 
@@ -40,9 +56,11 @@ Access these settings through the RuneLite configuration panel under "Bank Buddy
 ## Development
 
 ### Requirements
-- Java 11
-- Gradle
+- **Java 11** (REQUIRED - Java 21+ will cause build issues with current Gradle setup)
+- Gradle (automatically downloaded by wrapper)
 - RuneLite development environment
+
+**Important**: This plugin requires Java 11 to build and run properly. Using newer Java versions (17, 21, 24) will cause Gradle compatibility issues. Make sure to install and use Java 11 specifically for RuneLite plugin development.
 
 ### Building
 ```bash
@@ -98,11 +116,14 @@ If you encounter any issues or have suggestions for improvements, please:
 ## Changelog
 
 ### Version 1.0.0
-- Initial release
-- Basic bank organization features
-- Item value display
-- Search enhancements
-- Configurable settings
+- ✅ **Core Banking Features**: Real-time bank value calculation and item statistics
+- ✅ **Smart Overlay System**: Customizable overlay with bank information display
+- ✅ **Advanced Organization**: Item categorization and valuable item detection
+- ✅ **Enhanced User Interface**: Right-click menu options and enhanced bank interactions
+- ✅ **Comprehensive Configuration**: 15+ configurable settings across 4 categories
+- ✅ **Intelligent Notifications**: Bank space warnings and value change alerts
+- ✅ **Professional Code Structure**: Modular design with BankOrganizer utility class
+- ✅ **RuneLite Integration**: Full integration with RuneLite API and item management
 
 ## Credits
 
